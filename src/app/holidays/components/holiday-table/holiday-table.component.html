@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Holidays this year</h2>
+
+  <mat-table [dataSource]="elementsArray" role="grid" aria-describedby="tableInfo">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef role="columnheader">Name</mat-header-cell>
+      <mat-cell *matCellDef="let element" role="gridcell">{{element.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef role="columnheader">Description</mat-header-cell>
+      <mat-cell *matCellDef="let element" role="gridcell">{{element.description}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef role="columnheader">Date</mat-header-cell>
+      <mat-cell *matCellDef="let element" role="gridcell">{{element.date}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef role="columnheader">Type</mat-header-cell>
+      <mat-cell *matCellDef="let element" role="gridcell">{{element.type}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" role="row" tabindex="0" aria-label="Row detail"></mat-row>
+
+  </mat-table>
+
+
+</div>
+<mat-paginator
+  [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons
+  aria-label="Select page of holiday" role="navigation">
+</mat-paginator>

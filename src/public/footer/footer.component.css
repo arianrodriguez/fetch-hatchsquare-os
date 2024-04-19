@@ -1,0 +1,19 @@
+.footer {
+  background-color: #7D0A0A;
+  color: #fff;
+
+}
+
+.footer__content {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__content p:nth-child(1) {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
